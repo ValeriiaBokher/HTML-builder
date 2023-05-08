@@ -2,12 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const stylesPath = path.join(__dirname, 'styles');
-const projectDistPath = path.join(
-	__dirname,
-	'..',
-	'04-copy-directory',
-	'project-dist'
-);
+const projectDistPath = path.join(__dirname, 'project-dist');
 const bundlePath = path.join(projectDistPath, 'bundle.css');
 
 fs.readdir(stylesPath, { withFileTypes: true }, (err, files) => {
@@ -39,8 +34,6 @@ fs.readdir(stylesPath, { withFileTypes: true }, (err, files) => {
 						console.error('Error writing bundle file:', err);
 						return;
 					}
-
-					console.log('Bundle created successfully!');
 				});
 			}
 		});
